@@ -18,3 +18,10 @@ hexeditor bin/bootsector.bin
 ```
 55AA
 ```
+
+**add a make file with the run target**
+
+```
+run: bin/bootsector.bin
+	qemu-system-i386 bin/bootsector.bin --curses -serial mon:stdio
+```
