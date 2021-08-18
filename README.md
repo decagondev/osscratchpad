@@ -25,3 +25,19 @@ hexeditor bin/bootsector.bin
 run: bin/bootsector.bin
 	qemu-system-i386 bin/bootsector.bin --curses -serial mon:stdio
 ```
+
+**use rasm2 to get the opcode of infinite loop**
+
+```
+rasm2 'jmp $'
+
+> ebfe
+```
+
+**add ebfe to the start of the bootsector using hexeditor**
+
+```
+hexeditor bin/bootsector.bin
+
+EBFE
+```
